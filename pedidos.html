@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Pedido - Lanchonete</title>
+  <style>
+    body {
+      background-color: #000;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .topo {
+      background-color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.8rem 2rem;
+    }
+
+    .logo {
+      height: 50px;
+    }
+
+    .menu {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .menu a:hover {
+      color: red;
+    }
+
+    .btn-pedido {
+      background-color: #e50914;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    h1 {
+      color: red;
+      margin: 2rem 0 1rem;
+    }
+
+    .categorias {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .categorias button {
+      background-color: red;
+      border: none;
+      border-radius: 20px;
+      padding: 0.6rem 1.4rem;
+      color: white;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .categorias button:hover {
+      background-color: darkred;
+    }
+
+    .secao {
+      display: none;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .secao.ativa {
+      display: flex;
+    }
+
+    .produto {
+      background: #111;
+      padding: 1rem;
+      border-radius: 12px;
+      width: 260px;
+      box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+    }
+
+    .produto img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .produto h2 {
+      margin: 0.8rem 0 0.4rem;
+      font-size: 1.2rem;
+    }
+
+    .produto p {
+      font-size: 0.9rem;
+      color: #ccc;
+      margin-bottom: 0.8rem;
+    }
+
+    .produto label {
+      display: block;
+      margin: 0.5rem 0;
+    }
+
+    input[type="number"] {
+      width: 60px;
+      padding: 0.4rem;
+      border-radius: 6px;
+      border: none;
+      text-align: center;
+    }
+
+    .sacola {
+      width: 100%;
+      max-width: 600px;
+      background: #111;
+      padding: 1.5rem;
+      margin: 2rem auto;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+    }
+
+    .btn-finalizar {
+      background-color: red;
+      color: white;
+      padding: 0.8rem 2rem;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+
+    .btn-finalizar:hover {
+      background-color: darkred;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+  <header class="topo">
+    <img src="logo.png" alt="Logo DAD'S" class="logo">
+    <nav class="menu">
+       <li><a href="index.html">Início</a></li>
+        <li><a href="index.html">Sobre nós</a></li>
+        <li><a href="cardapio.html">Cardápio</a></li>
+        <li><a href="contato.html">Contato</a></li>
+    </nav>
+    <a href="#pedido" class="btn-pedido">Fazer pedido!</a>
+  </header>
+
+  <!-- Título -->
+  <h1 id="pedido">FAÇA SEU PEDIDO</h1>
+
+  <!-- Menu de categorias -->
+  <div class="categorias">
+    <button onclick="mostrarSecao('lanches')">Lanches</button>
+    <button onclick="mostrarSecao('pizzas')">Pizzas</button>
+    <button onclick="mostrarSecao('fritas')">Fritas</button>
+    <button onclick="mostrarSecao('omeletes')">Omeletes</button>
+    <button onclick="mostrarSecao('bebidas')">Bebidas</button>
+  </div>
+
+  <!-- Seções de produtos -->
+  <form>
+
+    <div id="lanches" class="secao ativa">
+      <div class="produto">
+        <img src="hb1.png" alt="Duplo Bacon">
+        <h2>Hambúrguer R$13,00</h2>
+        <p>PÃO, OVO E QUEIJO.</p>
+        <label>Qtd: <input type="number" name="duplo_bacon" min="0" max="10" value="0"></label>
+      </div>
+
+      <div class="produto">
+        <img src="hb1.png" alt="X-Burguer">
+        <h2>X-Burguer R$20,00</h2>
+        <p>PÃO, BIFE E QUEIJO.</p>
+        <label>Qtd: <input type="number" name="xburguer" min="0" max="5" value="0"></label>
+      </div>
+    </div>
+
+    <div id="pizzas" class="secao">
+      <div class="produto">
+        <img src="p1.png" alt="Pizza Calabresa">
+        <h2>Calabresa R$30,00</h2>
+        <p>Molho, mussarela, calabresa e cebola.</p>
+        <label>Qtd: <input type="number" name="pizza_calabresa" min="0" max="10" value="0"></label>
+      </div>
+    </div>
+
+    <div id="fritas" class="secao">
+      <div class="produto">
+        <img src="b1.png" alt="Batata Frita">
+        <h2>Batata Frita R$10,00</h2>
+        <p>Porção média de fritas.</p>
+        <label>Qtd: <input type="number" name="batata" min="0" max="10" value="0"></label>
+      </div>
+    </div>
+
+    <div id="omeletes" class="secao">
+      <div class="produto">
+        <img src="o11.png" alt="Omelete Simples">
+        <h2>Omelete R$15,00</h2>
+        <p>Omelete com queijo.</p>
+        <label>Qtd: <input type="number" name="omelete" min="0" max="10" value="0"></label>
+      </div>
+    </div>
+
+    <div id="bebidas" class="secao">
+      <div class="produto">
+        <img src="r1.png" alt="Refrigerante">
+        <h2>Coca lata R$6,00</h2>
+        <p>Lata 350ml .</p>
+        <label>Qtd: <input type="number" name="refri" min="0" max="10" value="0"></label>
+      </div>
+    </div>
+
+    <!-- Sacola -->
+    <div class="sacola">
+      <h2>🛍️ Sacola de Pedidos</h2>
+      <p>Informe a quantidade desejada para cada item acima.</p>
+      <button type="submit" class="btn-finalizar">Finalizar Pedido</button>
+    </div>
+
+  </form>
+
+  <script>
+    function mostrarSecao(id) {
+      document.querySelectorAll('.secao').forEach(secao => {
+        secao.classList.remove('ativa');
+      });
+      document.getElementById(id).classList.add('ativa');
+    }
+  </script>
+
+</body>
+</html>
