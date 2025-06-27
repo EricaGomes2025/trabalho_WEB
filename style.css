@@ -6,20 +6,21 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #000;
-  color: #fff;
+  background-color: #000; /* Mudança: fundo preto */
+  color: #fff; /* Mudança: texto branco */
 }
 
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #000;
+  background-color: #000; /* Mudança: fundo preto */
   padding: 1rem 2rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1); /* Adiciona uma borda clara */
 }
 
 .logo img {
-  height: 80px;
+  height: 80px; /* Ajuste: tamanho da logo */
 }
 
 nav ul {
@@ -29,13 +30,13 @@ nav ul {
 }
 
 nav ul li a {
-  color: #fff;
+  color: #fff; /* Mudança: texto dos links em branco */
   text-decoration: none;
   font-size: 1rem;
 }
 
 .pedido-btn {
-  background-color: #e4232b;
+  background-color: #e4232b; /* Ajuste: cor do botão */
   padding: 0.6rem 1.2rem;
   color: white;
   border-radius: 10px;
@@ -52,7 +53,7 @@ nav ul li a {
 
 .texto-hero h1 {
   font-size: 2.5rem;
-  color: #f5b361;
+  color: #f5b361; /* Mudança: ajuste de cor */
 }
 
 .texto-hero h2 {
@@ -62,7 +63,7 @@ nav ul li a {
 }
 
 .delicioso {
-  font-family: 'Cursive', sans-serif;
+  font-family: 'Cursive', sans-serif; /* Mudança: para fonte cursiva */
   font-weight: lighter;
   font-size: 2.2rem;
 }
@@ -70,7 +71,7 @@ nav ul li a {
 .btn-cardapio {
   display: inline-block;
   margin-top: 2rem;
-  background-color: #e4232b;
+  background-color: #e4232b; /* Ajuste: cor do botão do cardápio */
   color: white;
   padding: 0.8rem 1.5rem;
   border-radius: 8px;
@@ -78,245 +79,4 @@ nav ul li a {
   font-weight: bold;
 }
 
-.imagem-hero img {
-  max-width: 300px;
-  border-radius: 100px;
-}
-
-.sobre-nos {
-  padding: 2rem;
-  text-align: center;
-  background-color: #111;
-}
-
-.sobre-nos h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.sobre-nos p {
-  font-size: 1rem;
-  margin-bottom: 2rem;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.contato {
-  list-style: none;
-  margin-bottom: 1.5rem;
-}
-
-.contato li {
-  margin: 0.5rem 0;
-  font-size: 1rem;
-}
-
-.btn-contato {
-  background-color: #e4232b;
-  color: white;
-  padding: 0.8rem 1.5rem;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-/* Reset básico */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  color: #333;
-  background-color: #f8f8f8;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Container geral */
-header, section {
-  max-width: 1200px;
-  margin: auto;
-  padding: 20px;
-}
-
-/* Header */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  background-color: #fff;
-  border-bottom: 2px solid #eee;
-}
-
-.logo img {
-  height: 60px;
-}
-
-/* Navegação */
-nav ul {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-}
-
-nav a {
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-}
-
-nav a:hover {
-  color: #e63946;
-}
-
-/* Botão de pedido */
-.pedido-btn {
-  background-color: #e63946;
-  color: #fff;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-  margin-top: 10px;
-}
-
-.pedido-btn:hover {
-  background-color: #c92433;
-}
-
-/* Seção Hero */
-.hero {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  background-color: #fff;
-  padding: 40px 20px;
-}
-
-.texto-hero {
-  flex: 1 1 300px;
-}
-
-.texto-hero h1 {
-  font-size: 2.5rem;
-  color: #222;
-}
-
-.texto-hero h2 {
-  font-size: 2rem;
-  margin-top: 10px;
-}
-
-.texto-hero .delicioso {
-  color: #e63946;
-  font-weight: bold;
-}
-
-.btn-cardapio {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #2a9d8f;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-}
-
-.btn-cardapio:hover {
-  background-color: #21867a;
-}
-
-/* Imagem Hero */
-.imagem-hero {
-  flex: 1 1 300px;
-  text-align: center;
-}
-
-/* Seção Sobre Nós */
-.sobre-nos {
-  background-color: #fff;
-  padding: 40px 20px;
-  margin-top: 20px;
-}
-
-.sobre-nos h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.sobre-nos p {
-  font-size: 1.1rem;
-  margin-bottom: 20px;
-  text-align: justify;
-}
-
-.sobre-nos h3 {
-  margin-top: 20px;
-}
-
-.contato {
-  list-style: none;
-  margin-bottom: 20px;
-}
-
-.contato li {
-  margin-bottom: 5px;
-}
-
-.btn-contato {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #e63946;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-}
-
-.btn-contato:hover {
-  background-color: #c92433;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
-  }
-
-  .hero {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .imagem-hero {
-    order: -1; /* imagem acima do texto */
-  }
-
-  .pedido-btn,
-  .btn-cardapio,
-  .btn-contato {
-    width: 100%;
-    text-align: center;
-    box-sizing: border-box;
-  }
-}
-
+/* Adicione as demais seções conforme necessário */
