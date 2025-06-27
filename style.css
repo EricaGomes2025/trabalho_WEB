@@ -242,3 +242,73 @@
         flex-wrap: wrap;
       }
     }
+
+.sobre-nos {
+  background-color: #111;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.container-sobre {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.titulo-sobre {
+  font-size: 2.5rem;
+  color: #f5b361;
+  margin-bottom: 1.5rem;
+}
+
+.descricao-sobre {
+  font-size: 1.1rem;
+  color: #ddd;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+
+.box-contato {
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  padding: 2rem;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+.box-contato h3 {
+  font-size: 1.4rem;
+  color: #f5b361;
+  margin-bottom: 1rem;
+}
+
+.info-contato {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+}
+
+.info-contato li {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.info-contato a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.btn-fale-conosco {
+  display: inline-block;
+  background-color: #e4232b;
+  color: white;
+  padding: 0.9rem 1.6rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn-fale-conosco:hover {
+  background-color: #c51e26;
+}
+
