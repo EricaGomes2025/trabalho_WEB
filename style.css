@@ -68,20 +68,7 @@
       width: 100%;
     }
 
-    .pedido-btn {
-      background-color: #e4232b;
-      padding: 0.6rem 1.2rem;
-      color: white;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s, transform 0.2s;
-    }
-
-    .pedido-btn:hover {
-      background-color: #c51e26;
-      transform: scale(1.05);
-    }
+    
 
     .hero {
       display: flex;
