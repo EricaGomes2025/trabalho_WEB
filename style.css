@@ -39,5 +39,106 @@ nav ul li a {
 
 nav ul li a::after {
   content: "";
-  posit
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #e4232b;
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #e4232b;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+.pedido-btn {
+  background-color: #e4232b;
+  padding: 0.6rem 1.2rem;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 2rem;
+}
+
+.texto-hero h1 {
+  font-size: 2.5rem;
+  color: #f5b361;
+}
+
+.texto-hero h2 {
+  font-size: 2rem;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.delicioso {
+  font-family: 'Cursive', sans-serif;
+  font-weight: lighter;
+  font-size: 2.2rem;
+}
+
+.btn-cardapio {
+  display: inline-block;
+  margin-top: 2rem;
+  background-color: #e4232b;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.imagem-hero img {
+  max-width: 300px;
+  border-radius: 100px;
+}
+
+.sobre-nos {
+  padding: 2rem;
+  text-align: center;
+  background-color: #111;
+}
+
+.sobre-nos h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.sobre-nos p {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contato {
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+
+.contato li {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.btn-contato {
+  background-color: #e4232b;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
 }
