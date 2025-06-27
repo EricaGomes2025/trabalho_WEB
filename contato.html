@@ -52,10 +52,10 @@
     <h1>Fale Conosco</h1>
     <p>Preencha o formulário para falar com a equipe DAD'S.</p>
 
-    <form class="contact-form" id="contactForm" action="https://formsubmit.co/ericagomesfernandesmed@gmail.com" method="POST" onsubmit="return showMessage(event);">
+    <form class="contact-form" id="contactForm" action="https://formsubmit.co/ericagomesfernandesmed@gmail.com" method="POST">
       <!-- Anti-spam e redirecionamento -->
       <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="index.html" value="index.html"> <!-- Redireciona para a página inicial após envio -->
+      <input type="hidden" name="_next" value="confirmacao.html"> <!-- Redireciona para a página inicial após envio -->
 
       <label for="nome"><i class="fas fa-user"></i> Nome</label>
       <input type="text" id="nome" name="nome" required />
