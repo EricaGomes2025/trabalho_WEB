@@ -115,6 +115,27 @@
       margin-bottom: 0.5rem;
     }
 
+.pedido-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #e4232b, #ff5e62);
+  color: #fff;
+  padding: 0.9rem 2rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(228, 35, 43, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.pedido-btn:hover {
+  background: linear-gradient(135deg, #c51e26, #ff4040);
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 10px 30px rgba(228, 35, 43, 0.6);
+}
+
+
     
     .imagem-hero img {
       max-width: 350px;
