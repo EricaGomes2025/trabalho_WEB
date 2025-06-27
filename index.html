@@ -21,6 +21,29 @@
       </ul>
     </nav>
     <a href="pedidos.html" class="pedido-btn">Fazer pedido!</a>
+    <style>
+  .pedido-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #4A90E2; /* Azul bonito */
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(74, 144, 226, 0.4);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .pedido-btn:hover {
+    background-color: #357ABD; /* Azul mais escuro no hover */
+    transform: scale(1.05);
+  }
+
+  .pedido-btn:active {
+    transform: scale(0.95);
+  }
+</style>
   </header>
 
   <section class="hero">
@@ -41,20 +64,25 @@
   </section>
 
   <section class="sobre-nos" id="sobre-nos">
-    <h2>Sobre nós</h2>
-    <p>
+   <div class="container-sobre">
+    <h2 class="titulo-sobre">Sobre nós</h2>
+    <p class="descricao-sobre">
       Nossa pizzaria e hamburgueria é um empreendimento familiar, nascido do sonho de levar sabor e carinho para a casa das pessoas.
-      Trabalhamos apenas com delivery, garantindo praticidade sem abrir mão da qualidade. Cada pedido é preparado com dedicação e um toque caseiro que faz toda a diferença.
+      Trabalhamos apenas com delivery, garantindo praticidade sem abrir mão da qualidade.
+      Cada pedido é preparado com dedicação e um toque caseiro que faz toda a diferença.
     </p>
-    
-    <h3>Contate-nos</h3>
-    <ul class="contato">
-      <li> (32) 98709 - 6166</li>
-      <li> dads_pizzaburger@gmail.com</li>
-      <li> Rua quinze, número 46, Santa Clara – Cataguases</li>
-      <li>Terça a domingo – 18 hrs às 23 hrs</li>
-    </ul>
-    <a href="https://wa.me/5532988359043?text=Ol%C3%A1%21+Gostaria+de+fazer+um+pedido." target="_blank" class="btn-contato">FALE CONOSCO</a>
+
+    <div class="box-contato">
+      <h3>Contate-nos</h3>
+      <ul class="info-contato">
+        <li>(32) 98709 - 6166</li>
+        <li><a href="mailto:dads_pizzaburger@gmail.com">dads_pizzaburger@gmail.com</a></li>
+        <li>Rua Quinze, número 46, Santa Clara – Cataguases</li>
+        <li>Terça a domingo – 18h às 23h</li>
+      </ul>
+      <a href="https://wa.me/5532987096166" target="_blank" class="btn-fale-conosco">FALE CONOSCO</a>
+    </div>
+  </div>
   </section>
 </body>
 </html>
