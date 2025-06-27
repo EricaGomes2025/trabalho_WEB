@@ -1,54 +1,24 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dad's Pizza e Burger - Contato</title>
-  
-  <!-- Estilos -->
-  <link rel="stylesheet" href="style.css">       <!-- Estilo principal -->
-  <link rel="stylesheet" href="style2.css">      <!-- Estilo da seção de contato -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-</head>
-
-<body>
-  <!-- Cabeçalho do site -->
-  <header>
-    <div class="logo">
-      <img src="logo.png" alt="Logo Dad's Pizza e Burger">
-    </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="index.html">Sobre nós</a></li>
-        <li><a href="cardapio.html">Cardápio</a></li>
-       
-      </ul>
-    </nav>
-    <a href="pedidos.html" class="pedido-btn">Fazer pedido!</a>
-  </header>
-
-  <!-- Seção de Contato -->
-  <div class="contact-container">
-    <h1>Fale Conosco</h1>
-    <p>Preencha o formulário para falar com a equipe DAD'S.</p>
-
-    <form class="contact-form" action="https://formsubmit.co/ericagomesfernandesmed@gmail.com" method="POST">
-      <!-- Anti-spam e redirecionamento -->
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="index.html" value="index.html"> <!-- Redireciona para a página inicial após envio -->
-
       <label for="nome"><i class="fas fa-user"></i> Nome</label>
       <input type="text" id="nome" name="nome" required />
-
       <label for="email"><i class="fas fa-envelope"></i> E-mail</label>
       <input type="email" id="email" name="email" required />
-
       <label for="mensagem"><i class="fas fa-comment-dots"></i> Mensagem</label>
       <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
-
       <button type="submit"><i class="fas fa-paper-plane"></i> Enviar</button>
     </form>
+    <div id="responseMessage" style="display:none; margin-top: 20px; color: green;">
+      Sua mensagem foi enviada!
+      Entraremos em contato assim que possível.
+    </div>
   </div>
+  <script>
+    function showMessage(event) {
+      event.preventDefault(); // Impede o envio padrão do formulário
+      document.getElementById('responseMessage').style.display = 'block'; // Exibe a mensagem
+      // Aqui você pode adicionar a lógica para enviar o formulário via AJAX, se necessário
+      // Para o envio normal, você pode remover o preventDefault e deixar o formulário enviar normalmente
+      document.getElementById('contactForm').submit(); // Envia o formulário
+    }
+  </script>
 </body>
 </html>
