@@ -6,21 +6,20 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #000; /* Mudança: fundo preto */
-  color: #fff; /* Mudança: texto branco */
+  background-color: #000;
+  color: #fff;
 }
 
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #000; /* Mudança: fundo preto */
+  background-color: #000;
   padding: 1rem 2rem;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.1); /* Adiciona uma borda clara */
 }
 
 .logo img {
-  height: 80px; /* Ajuste: tamanho da logo */
+  height: 80px;
 }
 
 nav ul {
@@ -30,13 +29,13 @@ nav ul {
 }
 
 nav ul li a {
-  color: #fff; /* Mudança: texto dos links em branco */
+  color: #fff;
   text-decoration: none;
   font-size: 1rem;
 }
 
 .pedido-btn {
-  background-color: #e4232b; /* Ajuste: cor do botão */
+  background-color: #e4232b;
   padding: 0.6rem 1.2rem;
   color: white;
   border-radius: 10px;
@@ -53,7 +52,7 @@ nav ul li a {
 
 .texto-hero h1 {
   font-size: 2.5rem;
-  color: #f5b361; /* Mudança: ajuste de cor */
+  color: #f5b361;
 }
 
 .texto-hero h2 {
@@ -63,7 +62,7 @@ nav ul li a {
 }
 
 .delicioso {
-  font-family: 'Cursive', sans-serif; /* Mudança: para fonte cursiva */
+  font-family: 'Cursive', sans-serif;
   font-weight: lighter;
   font-size: 2.2rem;
 }
@@ -71,7 +70,7 @@ nav ul li a {
 .btn-cardapio {
   display: inline-block;
   margin-top: 2rem;
-  background-color: #e4232b; /* Ajuste: cor do botão do cardápio */
+  background-color: #e4232b;
   color: white;
   padding: 0.8rem 1.5rem;
   border-radius: 8px;
@@ -79,4 +78,45 @@ nav ul li a {
   font-weight: bold;
 }
 
-/* Adicione as demais seções conforme necessário */
+.imagem-hero img {
+  max-width: 300px;
+  border-radius: 100px;
+}
+
+.sobre-nos {
+  padding: 2rem;
+  text-align: center;
+  background-color: #111;
+}
+
+.sobre-nos h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.sobre-nos p {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contato {
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+
+.contato li {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.btn-contato {
+  background-color: #e4232b;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
