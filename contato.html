@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Formulário com Confirmação</title>
+  <title>Confirmação de Envio</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -30,48 +30,48 @@
       cursor: pointer;
     }
 
-    button:hover {
-      background-color: #218838;
-    }
-
-    /* MODAL BLOQUEANDO */
+    /* MODAL */
     .modal {
       display: none;
       position: fixed;
       z-index: 9999;
-      left: 0; top: 0;
+      top: 0; left: 0;
       width: 100vw;
       height: 100vh;
-      background: rgba(0,0,0,0.7);
+      background-color: rgba(0, 0, 0, 0.8);
       justify-content: center;
       align-items: center;
     }
 
     .modal-content {
       background: white;
-      padding: 30px;
+      padding: 20px 30px;
       border-radius: 10px;
       text-align: center;
     }
 
+    .modal-content p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
     .modal-content button {
-      width: auto;
-      margin-top: 20px;
       background-color: #007bff;
     }
   </style>
 </head>
 <body>
 
-  <h1>Contato</h1>
+  <h1>Formulário com Confirmação</h1>
+
   <form id="contactForm">
     <input type="text" name="nome" placeholder="Seu nome" required>
-    <input type="email" name="email" placeholder="Seu e-mail" required>
-    <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
+    <input type="email" name="email" placeholder="Seu email" required>
+    <textarea name="mensagem" placeholder="Mensagem" required></textarea>
     <button type="submit">Enviar</button>
   </form>
 
-  <!-- MODAL -->
+  <!-- MODAL DE CONFIRMAÇÃO -->
   <div class="modal" id="modalConfirmacao">
     <div class="modal-content">
       <p>Sua mensagem foi enviada com sucesso! 🎉</p>
@@ -80,35 +80,41 @@
   </div>
 
   <script>
-    const form = document.getElementById('contactForm');
-    const modal = document.getElementById('modalConfirmacao');
+    const form = document.getElementById("contactForm");
+    const modal = document.getElementById("modalConfirmacao");
 
-    form.addEventListener('submit', function(e) {
+    form.addEventListener("submit", function(e) {
       e.preventDefault();
 
-      const formData = new FormData(form);
-
+      // COMENTADO para teste local - descomente para usar de verdade
+      
+      const data = new FormData(form);
       fetch("https://formsubmit.co/ajax/ericagomesfernandesmed@gmail.com", {
         method: "POST",
-        headers: { 'Accept': 'application/json' },
-        body: formData
+        headers: {
+          'Accept': 'application/json'
+        },
+        body: data
       })
       .then(response => {
         if (response.ok) {
           form.reset();
           modal.style.display = "flex";
         } else {
-          alert("Erro ao enviar. Tente novamente.");
+          alert("Erro ao enviar.");
         }
       })
       .catch(error => {
-        alert("Erro de rede. Verifique sua conexão.");
+        alert("Erro de rede.");
       });
+      
+
+      // TESTE: mostra o modal mesmo sem enviar
+      modal.style.display = "flex";
     });
 
     function fecharModal() {
       modal.style.display = "none";
-      // window.location.href = "index.html"; // ative se quiser redirecionar
     }
   </script>
 </body>
