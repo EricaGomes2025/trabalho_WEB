@@ -27,6 +27,43 @@
       transform: scale(1.05);
       box-shadow: 0 6px 18px rgba(255, 59, 59, 0.8);
     }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      max-width: 400px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    .modal-content button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #28a745;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .modal-content button:hover {
+      background-color: #218838;
+    }
   </style>
 </head>
 
@@ -50,53 +87,60 @@
     <h1>Fale Conosco</h1>
     <p>Preencha o formulário para falar com a equipe DAD'S.</p>
 
-    <!-- Substitua o <form> anterior e adicione este script ao final do <body> -->
-<form class="contact-form" id="contactForm">
-  <label for="nome"><i class="fas fa-user"></i> Nome</label>
-  <input type="text" id="nome" name="nome" required />
+    <form class="contact-form" id="contactForm">
+      <label for="nome"><i class="fas fa-user"></i> Nome</label>
+      <input type="text" id="nome" name="nome" required />
 
-  <label for="email"><i class="fas fa-envelope"></i> E-mail</label>
-  <input type="email" id="email" name="email" required />
+      <label for="email"><i class="fas fa-envelope"></i> E-mail</label>
+      <input type="email" id="email" name="email" required />
 
-  <label for="mensagem"><i class="fas fa-comment-dots"></i> Mensagem</label>
-  <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+      <label for="mensagem"><i class="fas fa-comment-dots"></i> Mensagem</label>
+      <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
 
-  <button type="submit"><i class="fas fa-paper-plane"></i> Enviar</button>
-</form>
+      <button type="submit"><i class="fas fa-paper-plane"></i> Enviar</button>
+    </form>
 
-<div id="responseMessage" style="display:none; margin-top: 20px; color: green;">
-  Sua mensagem foi enviada!
-</div>
+    <!-- Modal de confirmação -->
+    <div class="modal" id="confirmationModal">
+      <div class="modal-content">
+        <p>Sua mensagem foi enviada com sucesso! Obrigado por entrar em contato. 😊</p>
+        <button onclick="fecharModal()">Confirmar leitura</button>
+      </div>
+    </div>
 
-<script>
-  document.getElementById("contactForm").addEventListener("submit", function (e) {
-    e.preventDefault();
+    <script>
+      const form = document.getElementById("contactForm");
+      const modal = document.getElementById("confirmationModal");
 
-    const form = e.target;
-    const data = new FormData(form);
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
 
-    fetch("https://formsubmit.co/ajax/ericagomesfernandesmed@gmail.com", {
-      method: "POST",
-      headers: {
-        'Accept': 'application/json'
-      },
-      body: data
-    })
-    .then(response => {
-      if (response.ok) {
-        document.getElementById("responseMessage").style.display = "block";
-        form.reset();
-      } else {
-        alert("Erro ao enviar. Tente novamente.");
+        const data = new FormData(form);
+
+        fetch("https://formsubmit.co/ajax/ericagomesfernandesmed@gmail.com", {
+          method: "POST",
+          headers: {
+            'Accept': 'application/json'
+          },
+          body: data
+        })
+        .then(response => {
+          if (response.ok) {
+            form.reset();
+            modal.style.display = "flex"; // Exibe o modal
+          } else {
+            alert("Erro ao enviar. Tente novamente.");
+          }
+        })
+        .catch(error => {
+          alert("Erro de rede. Verifique sua conexão.");
+        });
+      });
+
+      function fecharModal() {
+        document.getElementById("confirmationModal").style.display = "none";
       }
-    })
-    .catch(error => {
-      console.error("Erro:", error);
-      alert("Erro de rede. Verifique sua conexão.");
-    });
-  });
-</script>
-
+    </script>
   </div>
 </body>
 </html>
