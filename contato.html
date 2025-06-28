@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dad's Pizza e Burger - Contato</title>
 
-  <!-- Estilos -->
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="style2.css">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style2.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
   <style>
     .pedido-btn {
       display: inline-block;
@@ -29,46 +29,48 @@
       box-shadow: 0 6px 18px rgba(255, 59, 59, 0.8);
     }
 
-    /* Estilo do modal */
+    /* Modal de confirmação obrigatória */
     .modal {
       display: none;
       position: fixed;
-      z-index: 9999;
+      z-index: 99999;
       left: 0;
       top: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
     }
 
     .modal-content {
-      background-color: #fff;
-      margin: 15% auto;
+      background: white;
       padding: 30px;
-      border-radius: 8px;
+      border-radius: 12px;
+      text-align: center;
       width: 90%;
       max-width: 400px;
-      text-align: center;
       box-shadow: 0 0 15px rgba(0,0,0,0.3);
     }
 
     .modal-content p {
-      margin-bottom: 20px;
       color: #333;
+      font-size: 18px;
+      margin-bottom: 25px;
     }
 
-    .close-modal {
-      background-color: #FF6B6B;
-      color: #fff;
-      padding: 10px 20px;
+    .confirm-button {
+      background-color: #28a745;
+      color: white;
       border: none;
-      border-radius: 30px;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 8px;
       cursor: pointer;
-      font-weight: bold;
     }
 
-    .close-modal:hover {
-      background-color: #FF3B3B;
+    .confirm-button:hover {
+      background-color: #218838;
     }
   </style>
 </head>
@@ -76,7 +78,7 @@
 <body>
   <header>
     <div class="logo">
-      <img src="logo.png" alt="Logo Dad's Pizza e Burger">
+      <img src="logo.png" alt="Logo Dad's Pizza e Burger" />
     </div>
     <nav>
       <ul>
@@ -88,7 +90,6 @@
     <a href="pedidos.html" class="pedido-btn">Fazer pedido!</a>
   </header>
 
-  <!-- Seção de Contato -->
   <div class="contact-container">
     <h1>Fale Conosco</h1>
     <p>Preencha o formulário para falar com a equipe DAD'S.</p>
@@ -107,15 +108,14 @@
     </form>
   </div>
 
-  <!-- Modal de Confirmação -->
+  <!-- Modal obrigatório -->
   <div class="modal" id="modalConfirmacao">
     <div class="modal-content">
-      <p>Sua mensagem foi enviada com sucesso! 🎉</p>
-      <button class="close-modal" onclick="fecharModal()">Fechar</button>
+      <p>Sua mensagem foi enviada com sucesso! Obrigado por entrar em contato! 🎉</p>
+      <button class="confirm-button" onclick="fecharModal()">Confirmar</button>
     </div>
   </div>
 
-  <!-- Script para envio AJAX + exibição do modal -->
   <script>
     document.getElementById("contactForm").addEventListener("submit", function (e) {
       e.preventDefault();
@@ -132,7 +132,7 @@
       .then(response => {
         if (response.ok) {
           form.reset();
-          document.getElementById("modalConfirmacao").style.display = "block";
+          document.getElementById("modalConfirmacao").style.display = "flex";
         } else {
           alert("Erro ao enviar o formulário. Tente novamente.");
         }
@@ -145,6 +145,8 @@
 
     function fecharModal() {
       document.getElementById("modalConfirmacao").style.display = "none";
+      // Redirecionar se quiser:
+      window.location.href = "index.html";
     }
   </script>
 </body>
