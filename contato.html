@@ -73,7 +73,16 @@
       Sua mensagem foi enviada!
     </div>
   </div>
+<script>
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault(); // impede envio automático
 
+      // Aqui você pode adicionar o envio via AJAX, se necessário
+
+      alert("Mensagem enviada com sucesso!");
+      window.location.href = "index.html"; // redireciona após o alerta
+    });
+  </script>
  
 </body>
 </html>
