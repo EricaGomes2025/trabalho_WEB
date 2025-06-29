@@ -26,6 +26,27 @@
     }
   </style>
 </head>
+
+  <script>
+  function mostrarCategoria(nomeCategoria) {
+    const categorias = document.querySelectorAll('.categoria');
+    categorias.forEach(cat => {
+      cat.style.display = 'none';
+    });
+
+    const categoriaSelecionada = document.getElementById(nomeCategoria);
+    if (categoriaSelecionada) {
+      categoriaSelecionada.style.display = 'block';
+    }
+  }
+
+  // Mostra "Lanches" por padrão ao carregar a página
+  window.onload = () => {
+    mostrarCategoria('lanches');
+  };
+</script>
+
+  
 <body>
 
   <div id="icone-carrinho" onclick="mostrarCarrinho()">
