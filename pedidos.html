@@ -60,22 +60,33 @@
     }
 
     function adicionarAoCarrinho(nome, preco, botao) {
-      const formulario = botao.parentElement;
-      const nomeCliente = formulario.querySelector('.nome').value.trim();
-      const endereco = formulario.querySelector('.endereco').value.trim();
-      const quantidade = parseInt(formulario.querySelector('.quantidade').value);
+     const formulario = botao.parentElement;
+  const nomeCliente = formulario.querySelector('.nome').value.trim();
+  const endereco = formulario.querySelector('.endereco').value.trim();
+  const quantidade = parseInt(formulario.querySelector('.quantidade').value);
 
-      if (!nomeCliente || !endereco || quantidade < 1) {
-        alert('Por favor, preencha todos os campos corretamente.');
-        return;
-      }
+  if (!nomeCliente || !endereco || quantidade < 1) {
+    alert('Por favor, preencha todos os campos corretamente.');
+    return;
+  }
 
-      // Aqui você pode adicionar a lógica para adicionar ao carrinho
-      // Exemplo simples:
-      alert(`Pedido adicionado:\n${nome} x${quantidade}\nCliente: ${nomeCliente}\nEndereço: ${endereco}\nTotal: R$ ${(preco * quantidade).toFixed(2)}`);
+  const total = preco * quantidade;
+  const itemHTML = `<p>${nome} x${quantidade} - R$ ${total.toFixed(2)}</p>`;
 
-      // Fechar formulário após adicionar
-      fecharFormulario(botao);
+  const itensCarrinho = document.getElementById('itens-carrinho');
+  if (itensCarrinho.innerText === 'Nenhum item no carrinho.') {
+    itensCarrinho.innerHTML = '';
+  }
+  itensCarrinho.innerHTML += itemHTML;
+
+  const contadorItens = document.getElementById('contador-itens');
+  const contadorCarrinho = document.getElementById('contador-carrinho');
+  let totalItens = parseInt(contadorItens.innerText) || 0;
+  totalItens += quantidade;
+  contadorItens.innerText = totalItens;
+  contadorCarrinho.innerText = totalItens;
+
+  fecharFormulario(botao);
     }
 
     // Função para mostrar/esconder carrinho
