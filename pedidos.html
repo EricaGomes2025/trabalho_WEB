@@ -39,19 +39,10 @@
       }
     }
 
-    // Mostra "Lanches" por padrão ao carregar a página
-    window.onload = () => {
-      mostrarCategoria('lanches');
-    };
-
-    function mostrarFormulario(botao, descricao) {
+    function mostrarFormulario(botao) {
       const item = botao.parentElement;
       const formulario = item.querySelector('.formulariodopedido');
-      if (formulario.style.display === 'none' || formulario.style.display === '') {
-        formulario.style.display = 'block';
-      } else {
-        formulario.style.display = 'none';
-      }
+      formulario.style.display = formulario.style.display === 'block' ? 'none' : 'block';
     }
 
     function fecharFormulario(botao) {
@@ -59,56 +50,59 @@
       formulario.style.display = 'none';
     }
 
-    function adicionarAoCarrinho(nome, preco, botao) {
-     const formulario = botao.parentElement;
-  const nomeCliente = formulario.querySelector('.nome').value.trim();
-  const endereco = formulario.querySelector('.endereco').value.trim();
-  const quantidade = parseInt(formulario.querySelector('.quantidade').value);
-
-  if (!nomeCliente || !endereco || quantidade < 1) {
-    alert('Por favor, preencha todos os campos corretamente.');
-    return;
-  }
-
-  const total = preco * quantidade;
-  const itemHTML = `<p>${nome} x${quantidade} - R$ ${total.toFixed(2)}</p>`;
-
-  const itensCarrinho = document.getElementById('itens-carrinho');
-  if (itensCarrinho.innerText === 'Nenhum item no carrinho.') {
-    itensCarrinho.innerHTML = '';
-  }
-  itensCarrinho.innerHTML += itemHTML;
-
-  const contadorItens = document.getElementById('contador-itens');
-  const contadorCarrinho = document.getElementById('contador-carrinho');
-  let totalItens = parseInt(contadorItens.innerText) || 0;
-  totalItens += quantidade;
-  contadorItens.innerText = totalItens;
-  contadorCarrinho.innerText = totalItens;
-
-  fecharFormulario(botao);
-    }
-
-    // Função para mostrar/esconder carrinho
     function mostrarCarrinho() {
-    const carrinho = document.getElementById('carrinho');
-    if (carrinho.style.display === 'none' || carrinho.style.display === '') {
-      carrinho.style.display = 'block';
-    } else {
-      carrinho.style.display = 'none';
+      const carrinho = document.getElementById('carrinho');
+      carrinho.style.display = (carrinho.style.display === 'block') ? 'none' : 'block';
     }
-  }
 
+    function adicionarAoCarrinho(nome, preco, botao) {
+      const formulario = botao.parentElement;
+      const nomeCliente = formulario.querySelector('.nome').value.trim();
+      const endereco = formulario.querySelector('.endereco').value.trim();
+      const quantidade = parseInt(formulario.querySelector('.quantidade').value);
 
+      if (!nomeCliente || !endereco || quantidade < 1) {
+        alert('Por favor, preencha todos os campos corretamente.');
+        return;
+      }
+
+      const total = preco * quantidade;
+      const itemHTML = `<p>${nome} x${quantidade} - R$ ${total.toFixed(2)}</p>`;
+
+      const itensCarrinho = document.getElementById('itens-carrinho');
+      if (itensCarrinho.innerText === 'Nenhum item no carrinho.') {
+        itensCarrinho.innerHTML = '';
+      }
+      itensCarrinho.innerHTML += itemHTML;
+
+      const contadorItens = document.getElementById('contador-itens');
+      const contadorCarrinho = document.getElementById('contador-carrinho');
+      let totalItens = parseInt(contadorItens.innerText) || 0;
+      totalItens += quantidade;
+      contadorItens.innerText = totalItens;
+      contadorCarrinho.innerText = totalItens;
+
+      fecharFormulario(botao);
+    }
+
+    window.onload = () => {
+      mostrarCategoria('lanches');
+      const iconeCarrinho = document.getElementById('icone-carrinho');
+      if (iconeCarrinho) {
+        iconeCarrinho.addEventListener('click', mostrarCarrinho);
+      }
+    };
   </script>
 </head>
 
 <body>
 
-  <div id="icone-carrinho" onclick="mostrarCarrinho()" style="cursor:pointer; font-size: 24px; position: fixed; top: 10px; right: 10px;">
+  <!-- Ícone do Carrinho -->
+  <div id="icone-carrinho" style="cursor:pointer; font-size: 24px; position: fixed; top: 10px; right: 10px;">
     🛍️ <span id="contador-carrinho">0</span>
   </div>
 
+  <!-- Carrinho -->
   <div id="carrinho" style="display:none; position: fixed; top: 50px; right: 10px; background: white; border: 1px solid #ccc; padding: 10px; width: 250px; max-height: 400px; overflow-y: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
     <h3>Carrinho (<span id="contador-itens">0</span> itens)</h3>
     <div id="itens-carrinho">Nenhum item no carrinho.</div>
