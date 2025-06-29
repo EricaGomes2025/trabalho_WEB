@@ -1,4 +1,4 @@
-* {
+{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -9,95 +9,7 @@ body {
   background-color: #000;
   color: #fff;
 }
-/* Título da página */
-h1 {
-  text-align: center;
-  font-size: 2.2rem;
-  margin: 30px 0;
-  color: #ff3333;
-}
 
-/* Botões das categorias */
-.botoes {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.botoes button {
-  background: linear-gradient(45deg, #ff0000, #cc0000);
-  color: #fff;
-  font-weight: bold;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 30px;
-  margin: 10px;
-  cursor: pointer;
-  font-size: 16px;
-  box-shadow: 0 4px 8px rgba(255, 0, 0, 0.4);
-  transition: transform 0.2s ease;
-}
-
-.botoes button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 14px rgba(255, 0, 0, 0.6);
-}
-
-/* Estilo dos cards de produtos */
-.item {
-  background-color: #111;
-  border-radius: 20px;
-  padding: 20px;
-  margin: 15px auto;
-  width: 90%;
-  max-width: 500px;
-  color: #fff;
-  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-  text-align: center;
-}
-
-.item img {
-  max-width: 100%;
-  border-radius: 15px;
-  margin-bottom: 10px;
-}
-
-/* Botões dentro dos itens */
-.item button {
-  background: linear-gradient(45deg, #FF6B6B, #FFD93D);
-  color: #fff;
-  font-weight: bold;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  margin: 8px 5px;
-  transition: all 0.3s ease;
-}
-
-.item button:hover {
-  background: linear-gradient(45deg, #FF3B3B, #FFB900);
-  transform: scale(1.05);
-}
-
-/* Estilo dos formulários */
-.formulariodopedido {
-  background-color: #222;
-  padding: 15px;
-  border-radius: 15px;
-  margin-top: 10px;
-  display: none;
-}
-
-.formulariodopedido input,
-.formulariodopedido select {
-  display: block;
-  width: 100%;
-  margin: 8px 0;
-  padding: 8px;
-  border-radius: 8px;
-  border: none;
-  font-size: 14px;
-}
 header {
   display: flex;
   align-items: center;
@@ -387,4 +299,3 @@ font-size: 30px;
   max-height: 300px;
   overflow-y: auto;
 }
-
