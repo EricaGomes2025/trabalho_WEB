@@ -80,13 +80,18 @@
 
     // Função para mostrar/esconder carrinho
     function mostrarCarrinho() {
-      const carrinho = document.getElementById('carrinho');
-      if (carrinho.style.display === 'none' || carrinho.style.display === '') {
-        carrinho.style.display = 'block';
-      } else {
-        carrinho.style.display = 'none';
-      }
+    const carrinho = document.getElementById('carrinho');
+    if (carrinho.style.display === 'none' || carrinho.style.display === '') {
+      carrinho.style.display = 'block';
+    } else {
+      carrinho.style.display = 'none';
     }
+  }
+
+  // Mostra "Lanches" por padrão ao carregar a página
+  window.onload = () => {
+    mostrarCategoria('lanches');
+  };
   </script>
 </head>
 
