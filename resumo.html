@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+
   <header>
     <div class="logo">
       <img src="logo.png" alt="Logo Dad's Pizza e Burger">
@@ -21,6 +21,7 @@
       </ul>
     </nav>
     <a href="pedido4.html" class="pedido-btn">Fazer pedido!</a>
+  </header>
    <style>
      .pedido-btn {
   display: inline-block;
@@ -92,7 +93,8 @@
 
 
 
-
+<body>
+  
     
  <h2>Resumo do Pedido</h2>
     <div id="detalhes-pedido"></div>
@@ -101,7 +103,6 @@
       <button onclick="finalizarCompra()">✅ Finalizar Compra</button>
       <button onclick="window.location.href='pedido4.html'">🔙 Voltar ao pedido</button>
     </div>
-  </div>
 
   <script>
     const pedido = JSON.parse(localStorage.getItem("pedidoAtual"));
