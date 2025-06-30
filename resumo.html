@@ -69,13 +69,13 @@
 
     if (pedido) {
       const detalhes = pedido.itens.map(item => 
-        `<p>${item.quantidade}x ${item.nome} – R$ ${item.preco.toFixed(2)}</p>`
+        <p>${item.quantidade}x ${item.nome} – R$ ${item.preco.toFixed(2)}</p>
       ).join("");
 
-      document.getElementById("detalhes-pedido").innerHTML = `
+      document.getElementById("detalhes-pedido").innerHTML = 
         ${detalhes}
         <p><strong>Total: R$ ${pedido.total.toFixed(2)}</strong></p>
-      `;
+      ;
     } else {
       document.getElementById("detalhes-pedido").innerHTML = "<p>Nenhum pedido encontrado.</p>";
     }
