@@ -4,50 +4,60 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dad's Pizza e Burger</title>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-</head>
 
-  <header>
-    <div class="logo">
-      <img src="logo.png" alt="Logo Dad's Pizza e Burger">
-    </div>
-    <nav>
-      <ul>
-        <li><a href="#">Início</a></li>
-        <li><a href="#sobre-nos">Sobre nós</a></li>
-        <li><a href="cardapio.html">Cardápio</a></li>
-        <li><a href="contato.html">Contato</a></li>
-      </ul>
-    </nav>
-    <a href="pedido4.html" class="pedido-btn">Fazer pedido!</a>
-  </header>
-   <style>
-     .pedido-btn {
-  display: inline-block;
-  background: linear-gradient(45deg, #FF6B6B, #FFD93D);
-  color: #fff;
-  font-weight: bold;
-  padding: 12px 28px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-size: 18px;
-  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.6);
-  transition: background 0.3s ease, transform 0.2s ease;
-}
+  <style>
+    /* Estilo do botão "Fazer pedido" */
+    .pedido-btn {
+      display: inline-block;
+      background: linear-gradient(45deg, #FF6B6B, #FFD93D);
+      color: #fff;
+      font-weight: bold;
+      padding: 12px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 18px;
+      box-shadow: 0 4px 12px rgba(255, 107, 107, 0.6);
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
 
-.pedido-btn:hover {
-  background: linear-gradient(45deg, #FF3B3B, #FFB900);
-  transform: scale(1.05);
-  box-shadow: 0 6px 18px rgba(255, 59, 59, 0.8);
-}
-   </style>
+    .pedido-btn:hover {
+      background: linear-gradient(45deg, #FF3B3B, #FFB900);
+      transform: scale(1.05);
+      box-shadow: 0 6px 18px rgba(255, 59, 59, 0.8);
+    }
 
- <style>
+    /* Estilo geral da página de resumo */
     body {
       font-family: Arial, sans-serif;
       background-color: #fff3e0;
       padding: 20px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #fff;
+      padding: 10px 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    header .logo img {
+      height: 60px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      font-weight: bold;
+      color: #d32f2f;
     }
 
     .resumo {
@@ -56,7 +66,7 @@
       padding: 20px;
       border-radius: 10px;
       max-width: 500px;
-      margin: auto;
+      margin: 40px auto;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
@@ -90,20 +100,37 @@
       background-color: #e64a19;
     }
   </style>
-
-
-
+</head>
 <body>
-  
-    
- <h2>Resumo do Pedido</h2>
+
+  <!-- Cabeçalho -->
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Logo Dad's Pizza e Burger">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">Início</a></li>
+        <li><a href="#sobre-nos">Sobre nós</a></li>
+        <li><a href="cardapio.html">Cardápio</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+    <a href="pedido4.html" class="pedido-btn">Fazer pedido!</a>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <div class="resumo">
+    <h2>Resumo do Pedido</h2>
     <div id="detalhes-pedido"></div>
 
     <div class="botoes">
       <button onclick="finalizarCompra()">✅ Finalizar Compra</button>
       <button onclick="window.location.href='pedido4.html'">🔙 Voltar ao pedido</button>
     </div>
-</body>
+  </div>
+
+  <!-- Script -->
   <script>
     const pedido = JSON.parse(localStorage.getItem("pedidoAtual"));
 
@@ -123,10 +150,9 @@
     function finalizarCompra() {
       localStorage.removeItem("pedidoAtual");
       alert("Obrigado pela sua compra! Seu pedido está sendo preparado.");
-      window.location.href = "index.html"; // Altere se sua página inicial tiver outro nome
+      window.location.href = "index.html"; // Ajuste conforme sua estrutura
     }
   </script>
 
-  
-
+</body>
 </html>
