@@ -1,4 +1,4 @@
-{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -249,6 +249,32 @@ button:hover {
   border: 1px solid #ccc;
   padding: 10px;
   margin-top: 20px;
+}
+
+ 
+
+#icone-carrinho {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #ffcc00;
+  padding: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+font-size: 30px;
+
+}
+
+#carrinho {
+  position: fixed;
+  top: 60px;
+  right: 20px;
+  background: #c33e3e;
+  border: 1px solid #ccc;
+  padding: 15px;
+  width: 250px;
+  max-height: 300px;
+  overflow-y: auto;
 }
 
 .formulario-pedido {
