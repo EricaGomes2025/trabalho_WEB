@@ -41,7 +41,45 @@
   box-shadow: 0 6px 18px rgba(255, 59, 59, 0.8);
 }
    </style>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff3e0;
+      padding: 20px;
+    }
+    .resumo {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .resumo h2 {
+      color: #d32f2f;
+    }
+  </style>
   </header>
+  <div class="resumo">
+    <h2>Resumo do Pedido</h2>
+    <div id="detalhes-pedido"></div>
+  </div>
+
+  <script>
+    const pedido = JSON.parse(localStorage.getItem("pedidoAtual"));
+
+    if (pedido) {
+      const detalhes = pedido.itens.map(item => 
+        `<p>${item.quantidade}x ${item.nome} – R$ ${item.preco.toFixed(2)}</p>`
+      ).join("");
+
+      document.getElementById("detalhes-pedido").innerHTML = `
+        ${detalhes}
+        <p><strong>Total: R$ ${pedido.total.toFixed(2)}</strong></p>
+      `;
+    } else {
+      document.getElementById("detalhes-pedido").innerHTML = "<p>Nenhum pedido encontrado.</p>";
+    }
+  </script>
 
   
 </body>
