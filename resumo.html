@@ -42,26 +42,13 @@
 }
    </style>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #fff3e0;
-      padding: 20px;
-    }
-    .resumo {
-      background-color: #fff;
-      border: 1px solid #ddd;
-      padding: 20px;
-      border-radius: 10px;
-    }
-    .resumo h2 {
-      color: #d32f2f;
-    }
-  </style>
-  </header>
-  <div class="resumo">
-    <h2>Resumo do Pedido</h2>
+ <h2>Resumo do Pedido</h2>
     <div id="detalhes-pedido"></div>
+
+    <div class="botoes">
+      <button onclick="finalizarCompra()">✅ Finalizar Compra</button>
+      <button onclick="window.location.href='pedido4.html'">🔙 Voltar ao pedido</button>
+    </div>
   </div>
 
   <script>
@@ -69,15 +56,21 @@
 
     if (pedido) {
       const detalhes = pedido.itens.map(item => 
-        <p>${item.quantidade}x ${item.nome} – R$ ${item.preco.toFixed(2)}</p>
+        `<p>${item.quantidade}x ${item.nome} – R$ ${item.preco.toFixed(2)}</p>`
       ).join("");
 
-      document.getElementById("detalhes-pedido").innerHTML = 
+      document.getElementById("detalhes-pedido").innerHTML = `
         ${detalhes}
         <p><strong>Total: R$ ${pedido.total.toFixed(2)}</strong></p>
-      ;
+      `;
     } else {
       document.getElementById("detalhes-pedido").innerHTML = "<p>Nenhum pedido encontrado.</p>";
+    }
+
+    function finalizarCompra() {
+      localStorage.removeItem("pedidoAtual");
+      alert("Obrigado pela sua compra! Seu pedido está sendo preparado.");
+      window.location.href = "index.html"; // Altere se sua página inicial tiver outro nome
     }
   </script>
 
